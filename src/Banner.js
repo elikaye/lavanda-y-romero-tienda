@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect, useCallback } from 'react';
-import { Container, Row, Col, Button } from 'react-bootstrap'; // Asegúrate de importar Button
+import { Container, Row, Col } from 'react-bootstrap'; // Eliminamos Button si no se usa
 import headerImg from './img/LAVANDA Y ROMERO.png';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -42,13 +41,12 @@ const Banner = () => {
         return () => clearInterval(ticker);
     }, [tick, delta]);
 
-    const handleConnectClick = () => {
-        const element = document.getElementById('contact');
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
- 
+   // const handleConnectClick = () => {
+        //const element = document.getElementById('contact');
+        //if (element) {
+          //  element.scrollIntoView({ behavior: 'smooth' });
+       // }
+   // };
 
     return (
         <section className="banner" id="home">
@@ -60,15 +58,12 @@ const Banner = () => {
                                 <div className={isVisible ? "animated animate_fadeIn" : ""}>
                                     <span className="tagline">Bienvenidos</span>
                                     <h1>{`A Nuestra Tienda Online `}<span className="wrap">{text}</span></h1>
-                                    
-                                    
                                 </div>
                             )}
                         </TrackVisibility>
                     </Col>
                     <Col xs={12} md={6} xl={5}>
-                    <img src={headerImg} alt="corazon" />
-                       
+                        <img src={headerImg} alt="corazon" />
                     </Col>
                 </Row>
             </Container>
@@ -77,4 +72,3 @@ const Banner = () => {
 };
 
 export default Banner;
-
